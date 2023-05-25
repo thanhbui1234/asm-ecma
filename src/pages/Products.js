@@ -1,6 +1,15 @@
+import data from "../../db.json" assert { type: "json" };
+
 const Products = () => {
+  console.log(data);
   return `
-    <h1> Products</h1>
+     <div>
+     
+
+
+
+     
+     </div>
     `;
 };
 

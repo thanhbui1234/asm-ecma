@@ -30,9 +30,12 @@ const Nav = () => {
     <img  class='tw-w-[38px] tw-h-[34px]' src="/public/imgs/cart.png" alt="">
     <p class='text-white'> Giỏ hàng</p>
     </div>
-  
+
 
     </div>
+
+<div class='tw-h-7 tw-bg-[#F5F5FA] tw-w-full'></div>
+
   `;
 };
 
