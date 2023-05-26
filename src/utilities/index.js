@@ -99,15 +99,4 @@ const useEffect = (cb, deps) => {
   currentEffectOrder++;
 };
 
-router.on("/*", () => {}, {
-  before(done, match) {
-    states = [];
-    currentStateOrder = 0;
-    effects = [];
-    currentEffectOrder = 0;
-
-    done();
-  },
-});
-
 export { render, useState, useEffect, router };

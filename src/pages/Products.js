@@ -3,7 +3,6 @@ import { useState, useEffect } from "../utilities";
 
 const Products = () => {
   const [products, setProduct] = useState(data || []);
-  console.log(products);
   useEffect(() => {
     const saleProducts = document.querySelectorAll("#sale-product  li");
 
@@ -15,12 +14,14 @@ const Products = () => {
 
         saleProductActive.classList.remove("active");
         saleProductActive.classList.remove("tw-text-[#0D5CB6]");
+        saleProductActive.classList.remove("tw-font-bold");
 
         saleProduct.classList.add("tw-text-[#0D5CB6]");
         saleProduct.classList.add("active");
+        saleProduct.classList.add("tw-font-bold");
       });
     }
-  });
+  }, []);
 
   return `
      <div class='tw-flex container tw-gap-10 tw-mt-10 '>
@@ -39,7 +40,7 @@ const Products = () => {
     <img src="/public/imgs/bammer.png" alt="">  
   <section  class='tw-mt-5' id='sale-product' >
   <ul class='  tw-flex tw-gap-8'>
-  <li class='tw-cursor-pointer tw-text-xl tw-text-[#0D5CB6] active '>Phổ biến</li>
+  <li class='tw-cursor-pointer tw-text-xl tw-text-[#0D5CB6] tw-font-bold active '>Phổ biến</li>
   <li class='tw-cursor-pointer tw-text-xl'>Bán chạy</li>
   <li class='tw-cursor-pointer tw-text-xl'>Hàng mới</li>
   <li class='tw-cursor-pointer tw-text-xl'>Gía thấp</li>
@@ -47,25 +48,36 @@ const Products = () => {
   </ul>
   </section>
   <hr>
-   <div class='tw-flex tw-flex-cols-4'>
-    
-  ${products
-    .map(
-      (product) =>
-        `<div>
-        <a href='/cc/${product.id}'>
-<img width='300' src=${product.images} alt="">
-        <a>
-    <div>`
-    )
-    .join(" ")}
+   <div class='tw-grid tw-grid-cols-4 tw-gap-5 '>
+     ${products
+       .map((book) => {
+         return `
+      <div>
+      <a class='tw-text-[#242424] tw-no-underline' href='/product/${book.id}'>
+       <img class='' src=${book.images[0]} atl='' />
+        <p  class='e tw-ml-8 tw-mt-5 tw-w-[210px] tw-max-h-15 '>${book.name}</p>
+      </a>
+        <span class='tw-flex tw-ml-6 tw-gap-4'> 
+        <div class='d-flex'>
+        <p>★★★★★</p>
+        </div>
+        <span class='tw-text-slate-400  '> | ${
+          book?.quantity_sold ? book?.quantity_sold?.text : "Đã bán 0"
+        }</span>
+         </span>
 
+         <p class='tw-text-xl tw-ml-5'>
+          ${book.original_price} đ
+         </p>
 
-      
+      </div>
+      `;
+       })
+       .join("")}
 
    </div>
      </div>
-    
+     </div>
     `;
 };
 
