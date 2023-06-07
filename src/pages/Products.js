@@ -1,11 +1,25 @@
-import data from "../../db.json" assert { type: "json" };
+import { prototype } from "postcss/lib/comment";
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 import { useState, useEffect } from "../utilities";
 
 const Products = () => {
-  const [products, setProduct] = useState(data || []);
+  const [products, setProduct] = useState([]);
   useEffect(() => {
-    const saleProducts = document.querySelectorAll("#sale-product  li");
+    fetch("http://localhost:3000/books")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => setProduct(data));
+  }, []);
+  useEffect(() => {
+    const categories = document.querySelector("#category");
+    const onTop = document.querySelector(".onTop");
+    onTop.addEventListener("click", () => {
+      categories.scrollIntoView({ behavior: "smooth" });
+    });
 
+    const saleProducts = document.querySelectorAll("#sale-product  li");
     for (let saleProduct of saleProducts) {
       saleProduct.addEventListener("click", () => {
         const saleProductActive = document.querySelector(
@@ -21,12 +35,13 @@ const Products = () => {
         saleProduct.classList.add("tw-font-bold");
       });
     }
-  }, []);
+  });
 
   return `
-     <div class='tw-flex container tw-gap-10 tw-mt-10 '>
+  ${Nav()}
+     <div class='tw-flex container tw-gap-10 tw-mt-10 tw-pt-[120px]  '>
       <div class='tw-flex tw-flex-col'>
-      <p class='tw-w-40'>Danh Mục Sản Phẩm</p>
+      <p  id='category' class='tw-w-40'>Danh Mục Sản Phẩm</p>
       <ul class='tw-mr-6 tw-w-40 ' >
         <li>English Books<li>
         <li>Sách tiếng Việt<li>
@@ -53,7 +68,7 @@ const Products = () => {
        .map((book) => {
          return `
       <div>
-      <a class='tw-text-[#242424] tw-no-underline' href='/product/${book.id}'>
+      <a class='tw-text-[#242424] tw-no-underline' href='#/product/${book.id}'>
        <img class='' src=${book.images[0]} atl='' />
         <p  class='e tw-ml-8 tw-mt-5 tw-w-[210px] tw-max-h-15 '>${book.name}</p>
       </a>
@@ -77,7 +92,10 @@ const Products = () => {
 
    </div>
      </div>
+
      </div>
+      <button class='onTop btn btn-danger'>MOVE ON TOP</button>
+     ${Footer()}
     `;
 };
 
