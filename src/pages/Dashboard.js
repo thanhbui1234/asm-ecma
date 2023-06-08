@@ -1,6 +1,6 @@
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
-import { useEffect, useState, router } from "../../utilities";
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import { useEffect, useState } from "../utilities";
 import Swal from "sweetalert2";
 
 const Dashboard = () => {
@@ -11,11 +11,12 @@ const Dashboard = () => {
       .then((res) => res.json())
       .then((data) => setBooks(data));
   }, []);
+
   useEffect(() => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger",
+        confirmButton: " mx-3 btn btn-success",
+        cancelButton: "mx-3 btn btn-danger",
       },
       buttonsStyling: false,
     });
@@ -63,8 +64,7 @@ const Dashboard = () => {
 
   return `
     ${Nav()}  
-
-<button class='btn m-5 btn-primary'>Thêm mới</button>
+      <a href='/admin/addProduct' class=' btn btn-primary tw-relative tw-left-[1470px] tw-top-[95px] btn m-5 btn-primary'>Thêm mới</a>
   <table class="table shadow my-5  bg-body rounded table-condensed table-bordered  container">
   <thead>
     <tr>
@@ -81,7 +81,7 @@ const Dashboard = () => {
     .map((book, index) => {
       return `
             <tr>
-      <td>${index + 1}</td>
+      <td class=''>${index + 1}</td>
       <td> 
 <img class='tw-w-10' src="${book.images[0]}" alt="">
       </td>

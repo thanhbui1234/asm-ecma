@@ -3,11 +3,13 @@ import "bootstrap/dist/js/bootstrap";
 import { render, router } from "./utilities";
 import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
-import Dashboard from "./pages/admin/Dashboard";
+import Dashboard from "./pages/Dashboard";
 const app = document.querySelector("#app");
 import ProductDetail from "./pages/Product";
+import AddProduct from "./pages/AddProduct";
 ///////////////////////////////////
 
+router.on("/admin/addProduct", render(AddProduct, app));
 router.on("/admin", () => render(Dashboard, app));
 router.on("/", () => render(Products, app));
 router.on("/product/:id", ({ data }) => render(() => ProductDetail(data), app));
