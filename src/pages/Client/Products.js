@@ -1,7 +1,6 @@
-import { prototype } from "postcss/lib/comment";
-import Footer from "../components/Footer";
-import Nav from "../components/Nav";
-import { useState, useEffect } from "../utilities";
+import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
+import { useState, useEffect } from "../../utilities";
 
 const Products = () => {
   const [products, setProduct] = useState([]);
