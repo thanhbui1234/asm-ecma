@@ -1,6 +1,6 @@
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
-import { useEffect, useState, router } from "../../utilities";
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
+import { useEffect, useState } from "../utilities";
 import Swal from "sweetalert2";
 
 const ProductDetail = ({ id }) => {
@@ -12,6 +12,7 @@ const ProductDetail = ({ id }) => {
         setBook(res);
       });
   }, []);
+  console.log(book);
 
   useEffect(() => {
     const Toast = Swal.mixin({
@@ -48,17 +49,15 @@ const ProductDetail = ({ id }) => {
 
   console.log(book);
   const { images } = book;
-  console.log(images);
 
   return ` <div class="">
                   ${Nav()}
-                  
-                  <div class=' tw-mx-[20000px] tw-grid tw-grid-rows-2'>
+                  <div class=' tw-mx-[100px] tw-mt-52 tw-gap-x-64 tw-flex'>
                   <section class=''>
                   <img class='tw-w-[700px]' src="${
                     images ? images[0] : ""
                   }" alt="">
-                   <img class=' tw-border-gray-400 tw-w-[150px]' src="${
+                   <img class='tw-mt-3 tw-border-gray-400 tw-w-[150px]' src="${
                      images ? images[1] : ""
                    }" alt="">
                   </section>
@@ -75,16 +74,25 @@ const ProductDetail = ({ id }) => {
       } đ </p>
             <p class='tw-mt-20'>Số lượng</p>
             <div class='tw-flex tw-my-10'>
-                <button  class='up  tw-h-10 tw-w-10 tw-border '>+</button>
-                <input class='value_quanlity tw-justify-center tw-border tw-w-20 tw-outline-none tw-pl-8' value='1'  type="text" />
                 <button class=' down tw-border tw-w-10'>-</button>
+                <input class='value_quanlity tw-justify-center tw-border tw-w-20 tw-outline-none tw-pl-8' value='1'  type="text" />
+                <button  class='up  tw-h-10 tw-w-10 tw-border '>+</button>
+
             
             </div>
             <button class='buy btn btn-danger tw-w-[162px] '>Chọn mua</button>
 
+            
+
                   </section>
+
+               
                   </div>
 
+                  <section class='container tw-mt-32 '>
+                  
+                    <h1>Mô tả sản phẩm</h1>
+                  ${book.description}</section>
                 
                   ${Footer()}
               </div>

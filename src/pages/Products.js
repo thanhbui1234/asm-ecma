@@ -1,6 +1,6 @@
-import Footer from "../../components/Footer";
-import Nav from "../../components/Nav";
-import { useState, useEffect } from "../../utilities";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+import { useEffect, useState } from "../utilities";
 
 const Products = () => {
   const [products, setProduct] = useState([]);
@@ -11,6 +11,8 @@ const Products = () => {
       })
       .then((data) => setProduct(data));
   }, []);
+
+  console.log(products);
   useEffect(() => {
     const categories = document.querySelector("#category");
     const onTop = document.querySelector(".onTop");
@@ -62,13 +64,13 @@ const Products = () => {
   </ul>
   </section>
   <hr>
-   <div class='tw-flex tw-flex-row-cols-4 tw-gap-5 '>
+   <div class='tw-grid tw-grid-cols-4 tw-gap-5 '>
      ${products
        .map((book) => {
          return `
       <div>
       <a class='tw-text-[#242424] tw-no-underline' href='#/product/${book.id}'>
-       <img class='' src=${book.images[0]} atl='' />
+       <img class='' src=${book.images ? book.images[0] : book.images} atl='' />
         <p  class='e tw-ml-8 tw-mt-5 tw-w-[210px] tw-max-h-15 '>${book.name}</p>
       </a>
         <span class='tw-flex tw-ml-6 tw-gap-4'> 

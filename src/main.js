@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import { render, router } from "./utilities";
-import Products from "./pages/Client/Products";
+import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
-import ProductDetail from "./pages/Client/ProductCopy";
 import Dashboard from "./pages/admin/Dashboard";
 const app = document.querySelector("#app");
+import ProductDetail from "./pages/Product";
 ///////////////////////////////////
 
 router.on("/admin", () => render(Dashboard, app));

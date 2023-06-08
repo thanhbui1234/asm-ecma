@@ -1,4 +1,3 @@
-import data from "../../db" assert { type: "json" };
 import { useEffect } from "../utilities";
 
 const Nav = () => {
