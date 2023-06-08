@@ -53,7 +53,7 @@ const Products = () => {
       <h3 class=''>Nhà Sách Tiki</h3>
     <img src="/public/imgs/bammer.png" alt="">  
   <section  class='tw-mt-5' id='sale-product' >
-  <ul class='  tw-flex tw-gap-8'>
+  <ul class='tw-flex tw-gap-10'>
   <li class='tw-cursor-pointer tw-text-xl tw-text-[#0D5CB6] tw-font-bold active '>Phổ biến</li>
   <li class='tw-cursor-pointer tw-text-xl'>Bán chạy</li>
   <li class='tw-cursor-pointer tw-text-xl'>Hàng mới</li>
@@ -62,7 +62,7 @@ const Products = () => {
   </ul>
   </section>
   <hr>
-   <div class='tw-grid tw-grid-cols-4 tw-gap-5 '>
+   <div class='tw-flex tw-flex-row-cols-4 tw-gap-5 '>
      ${products
        .map((book) => {
          return `

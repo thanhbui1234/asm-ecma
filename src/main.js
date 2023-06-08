@@ -3,7 +3,7 @@ import "bootstrap/dist/js/bootstrap";
 import { render, router } from "./utilities";
 import Products from "./pages/Client/Products";
 import NotFound from "./pages/NotFound";
-import ProductDetail from "./pages/Client/Product";
+import ProductDetail from "./pages/Client/ProductCopy";
 import Dashboard from "./pages/admin/Dashboard";
 const app = document.querySelector("#app");
 ///////////////////////////////////
