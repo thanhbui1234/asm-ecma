@@ -1,17 +1,36 @@
 {
   "books": [
     {
-      "id": 4,
-      "description": "<p><strong>Sáng Tạo Không Giới Hạn Trong Kinh Doanh</strong></p>\n<p> </p>\n<p><span style=\"font-weight: 400;\">“…Đôi khi, thành công phụ thuộc vào một cái gì đó bên trong mỗi chúng ta, không phải là kết quả của việc nhiều tiền bạc, khả năng hô hào hay bằng cấp…”</span></p>\n<p> </p>\n<p><span style=\"font-weight: 400;\">Tác phẩm “Sáng Tạo Không Giới Hạn Trong Kinh Doanh” nói về những bí quyết trong khởi nghiệp, kinh doanh và bí mật thành công trong cuộc sống của nhà xuất khẩu nông sản - Chủ Tịch Phúc Sinh Group Phan Minh Thông. </span></p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" title=\"\" src=\"https://salt.tikicdn.com/ts/tmp/22/cb/39/698d1fa6b23b78238ada9fc5c11de10c.png\" alt=\"\" width=\"584\" height=\"584\" /></p>\n<p><span style=\"font-weight: 400;\"><br />Tác phẩm dày gần 300 trang, có phụ lục nhiều hình ảnh đẹp trích xuất từ bộ sưu tập nghệ thuật của chính tác giả với 24 bài viết dạng tản văn - truyện kể, 6 bài phỏng vấn, chia sẻ, viết về doanh nhân Phan Minh Thông.</span></p>\n<p> </p>\n<p><span style=\"font-weight: 400;\">Theo tác giả/Doanh Nhân Phan Minh Thông chia sẻ, tác phẩm “Sáng tạo không giới hạn trong kinh doanh” được anh viết trong 5 năm, xuất phát từ những cảm xúc thực tế với các chuyến đi công tác trong - ngoài nước, từ những câu chuyện làm ăn, kinh doanh và quan sát cuộc sống đến việc thực nghiệm chính bản thân anh trong niềm đam mê khám phá nghệ thuật ở cả hai giác độ: Sưu tập và sáng tạo.</span></p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" title=\"\" src=\"https://salt.tikicdn.com/ts/tmp/8a/ab/ae/87408d13d89e2969178740adb456ba19.png\" alt=\"\" width=\"567\" height=\"567\" /></p>\n<p><span style=\"font-weight: 400;\"><br />Tác phẩm: Sáng Tạo Không Giới Hạn Trong Kinh Doanh</span></p>\n<p><span style=\"font-weight: 400;\">Tác giả: Phan Minh Thông</span></p>\n<p><span style=\"font-weight: 400;\">Số trang: 284 trang</span></p>\n<p><span style=\"font-weight: 400;\">Nội dung tổng quát: nói về những bí quyết trong khởi nghiệp, kinh doanh và bí mật thành công trong cuộc sống của nhà xuất khẩu nông sản Phan Minh Thông.</span></p><p>Giá sản phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí hàng cồng kềnh, thuế nhập khẩu (đối với đơn hàng giao từ nước ngoài có giá trị trên 1 triệu đồng).....</p>",
-      "images": [
-        "https://salt.tikicdn.com/ts/product/93/28/53/c6b3299850c4af077f36ed73189620ad.jpg",
-        "https://salt.tikicdn.com/ts/product/31/06/a5/791469af9457325062a7e16bfca5664d.jpg"
-      ],
-      "list_price": 96000,
-      "name": "Sáng Tạo Không Giới Hạn Trong Kinh Doanh",
-      "original_price": 96000,
-      "rating_average": 0,
-      "short_description": "Sáng Tạo Không Giới Hạn Trong Kinh Doanh “…Đôi khi, thành công phụ thuộc vào một cái gì đó bên trong mỗi chúng ta, không phải là kết quả của việc nhiều tiền bạc, khả năng hô hào hay bằng cấp…” Tác..."
+      "id": "433cb2e4-2283-4963-9e7d-5d049caa03bc",
+      "name": "Bùi Chí Thanh",
+      "list_price": "123231",
+      "description": "dsađâsd",
+      "short_description": "dsa",
+      "original_price": "123231"
+    },
+    {
+      "id": "08246d2b-21da-41ee-a0b3-16fa8e080f40",
+      "name": "Bùi Chí Thanh 123",
+      "list_price": "12321",
+      "description": "http://127.0.0.1:5173/#/admin/addProduct",
+      "short_description": "http://127.0.0.1:5173/#/admin/addProduct",
+      "original_price": "12321"
+    },
+    {
+      "id": "1634121e-6e4b-441a-8860-aff98195bcc7",
+      "name": "Bùi Chí Thanh",
+      "list_price": "5",
+      "description": "Bùi Chí Thanh",
+      "short_description": "Bùi Chí Thanh",
+      "original_price": "5"
+    },
+    {
+      "id": "14bd5c7b-128c-4ab2-b905-2f8d29198047",
+      "name": "Bùi Chí Thanh 123",
+      "list_price": "7",
+      "description": "Bùi Chí Thanh",
+      "short_description": "Bùi Chí Thanh",
+      "original_price": "7"
     }
   ]
 }

@@ -12,7 +12,6 @@ const ProductDetail = ({ id }) => {
         setBook(res);
       });
   }, []);
-  console.log(book);
 
   useEffect(() => {
     const Toast = Swal.mixin({

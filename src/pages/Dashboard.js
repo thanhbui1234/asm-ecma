@@ -13,6 +13,18 @@ const Dashboard = () => {
   }, []);
 
   useEffect(() => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: " mx-3 btn btn-success",
@@ -44,9 +56,18 @@ const Dashboard = () => {
                 headers: {
                   "Content-type": "application/json; charset=UTF-8", // Indicates the content
                 },
-              }).then((data) => {
-                router.navigate("/admin");
-              });
+              })
+                .then((data) => {
+                  router.navigate("/admin");
+                })
+                .then(() => {
+                  setTimeout(() => {
+                    Toast.fire({
+                      icon: "success",
+                      title: "Signed in successfully",
+                    });
+                  }, 500);
+                });
             } else if (
               /* Read more about handling dismissals below */
               result.dismiss === Swal.DismissReason.cancel
@@ -64,7 +85,7 @@ const Dashboard = () => {
 
   return `
     ${Nav()}  
-      <a href='/#/admin/addProduct' class=' btn btn-primary tw-relative tw-left-[1470px] tw-top-[95px] btn m-5 btn-primary'>Thêm mới</a>
+      <a href='/#/admin/addProduct' class=' tw-relative tw-left-[1470px] tw-top-[95px] btn m-5 '>Thêm mới</a>
   <table class="table shadow my-5  bg-body rounded table-condensed table-bordered  container">
   <thead>
     <tr>
@@ -90,7 +111,9 @@ const Dashboard = () => {
         <button data-id='${
           book.id
         }'class="btnRemove  btn btn-danger" >Xóa</button>
-        <button class="btn btn-success" >Update</button>
+        <a href='/#/admin/UpdateProd/${
+          book.id
+        }' class='btn btn-success'>Update</a>
       </td>
     </tr>
       

@@ -1,6 +1,7 @@
-import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 import { useEffect, useState } from "../utilities";
+import Swal from "sweetalert2";
 
 const Products = () => {
   const [products, setProduct] = useState([]);
@@ -12,7 +13,6 @@ const Products = () => {
       .then((data) => setProduct(data));
   }, []);
 
-  console.log(products);
   useEffect(() => {
     const categories = document.querySelector("#category");
     const onTop = document.querySelector(".onTop");

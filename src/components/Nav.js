@@ -1,42 +1,11 @@
 import { useEffect } from "../utilities";
 
 const Nav = () => {
-  useEffect(() => {
-    const tab_search = document.querySelector("#tab-search");
-    const search = document.querySelector("#search");
-
-    const renderSeach = (valueSeach) => {
-      console.log(tab_search);
-      const uiSearch = valueSeach
-        .map((product) => {
-          return `<ul>
-        <li><a href='/#/product/${product.id}'>${product.name}</a></li>
-
-      </ul>`;
-        })
-        .join("");
-
-      tab_search.innerHTML = uiSearch;
-    };
-
-    search.addEventListener("click", () => {
-      tab_search.classList.toggle("tw-invisible");
-    });
-    search.oninput = (e) => {
-      const dataSearch = data.filter((product) => {
-        return product.name
-          .toUpperCase()
-          .includes(e.target.value.toUpperCase());
-      });
-      renderSeach(dataSearch);
-    };
-  });
-
   return `
       <div id='tab-search' class='tw-z-30 tw-invisible tw-w-[420px] tw-left-[535px]  tw-top-[70px] tw-absolute tw-bg-white tw-h-[500px]'>
       </div>
     <div class='tw-w-full tw-relative tw-h-[120px] tw-flex tw-gap-[120px] tw-justify-center  tw-bg-[#1A94FF] tw-py-5'>
-    <img class='w-[45px]' src="/public/imgs/logo tiki.png" alt=""> 
+   <a href='/'><img class='w-[45px]' src="/public/imgs/logo tiki.png" alt=""> </a>  
     <div id='showSearch' class='tw-flex tw-mt-3'>
   <input id='search' class='tw-outline-none tw-w-[430px] tw-h-[35px]' type="text">
 <button class='tw-flex tw-w-[130px] tw-h-[35px] tw-bg-[#0D5CB6] tw-pt-1 tw-pl-3 ' >  <svg class=' text-white tw-w-[24px] ' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-2 h-2">
