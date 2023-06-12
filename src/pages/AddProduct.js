@@ -6,22 +6,10 @@ import Swal from "sweetalert2";
 
 const AddProduct = () => {
   useEffect(() => {
-    const Toast = Swal.mixin({
-      toast: true,
-      position: "top-end",
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener("mouseenter", Swal.stopTimer);
-        toast.addEventListener("mouseleave", Swal.resumeTimer);
-      },
-    });
     const my_form = document.querySelector("#my-form");
     const name = document.querySelector('input[name="name"]');
     const price = document.querySelector('input[name="price"]');
     const description = document.querySelector("#description");
-    const short_description = document.querySelector("#short_description");
     my_form.addEventListener("submit", (e) => {
       e.preventDefault();
       const valueForm = {
@@ -29,7 +17,6 @@ const AddProduct = () => {
         name: name.value,
         list_price: price.value,
         description: description.value,
-        short_description: short_description.value,
         original_price: price.value,
       };
 
@@ -40,7 +27,8 @@ const AddProduct = () => {
         },
         body: JSON.stringify(valueForm),
       }).then(() => {
-        navigator("/admin");
+        alert("Thêm sản phẩm thành công");
+        console.log(router.navigate("./admin/"));
       });
     });
   });
@@ -62,10 +50,7 @@ const AddProduct = () => {
   <label for="" class="tw-text-lg form-label">Description</label>
   <textarea  class="form-control" id="description" rows="3"></textarea>
 </div>
-<div class="mb-3">
-  <label for="" class="tw-text-lg form-label">Short Description</label>
-  <textarea  class="form-control" id="short_description" rows="3"></textarea>
-</div>
+
 <button class='addProduct btn btn-danger'>ADD</button>
 
 </form>

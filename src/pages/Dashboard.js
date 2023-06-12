@@ -2,7 +2,6 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import { useEffect, useState, router } from "../utilities";
 import Swal from "sweetalert2";
-
 const Dashboard = () => {
   const [books, setBooks] = useState([]);
 
@@ -57,16 +56,14 @@ const Dashboard = () => {
                   "Content-type": "application/json; charset=UTF-8", // Indicates the content
                 },
               })
+                .then(() => {
+                  Toast.fire({
+                    icon: "success",
+                    title: "Signed in successfully",
+                  });
+                })
                 .then((data) => {
                   router.navigate("/admin");
-                })
-                .then(() => {
-                  setTimeout(() => {
-                    Toast.fire({
-                      icon: "success",
-                      title: "Signed in successfully",
-                    });
-                  }, 500);
                 });
             } else if (
               /* Read more about handling dismissals below */
@@ -90,9 +87,10 @@ const Dashboard = () => {
   <thead>
     <tr>
       <th>#</th>
-      <th>First</th>
-      <th>Last</th>
-      <th>Handle</th>
+      <th>Images</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Buy</th>
       <th class='w-25'>Action</th>
     </tr>
   </thead>
@@ -103,8 +101,11 @@ const Dashboard = () => {
             <tr>
       <td class=''>${index + 1}</td>
       <td> 
-<img class='tw-w-10' src="${book.images ? book.images[0] : ""}" alt="">
+<img class='tw-w-10' src="${
+        book.images ? book.images[0] : "/public/imgs/imgNotfound.jpg"
+      }" alt="">
       </td>
+      <td>${book.name}</td>
       <td>${book.list_price}</td>
       <td>${book?.quantity_sold ? book?.quantity_sold?.value : "0"}</td>
       <td>

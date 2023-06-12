@@ -54,7 +54,7 @@ const ProductDetail = ({ id }) => {
                   <div class=' tw-mx-[100px] tw-mt-52 tw-gap-x-64 tw-flex'>
                   <section class=''>
                   <img class='tw-w-[700px]' src="${
-                    images ? images[0] : ""
+                    images ? images[0] : "/public/imgs/imgNotfound.jpg"
                   }" alt="">
                    <img class='tw-mt-3 tw-border-gray-400 tw-w-[150px]' src="${
                      images ? images[1] : ""
@@ -63,9 +63,11 @@ const ProductDetail = ({ id }) => {
 
                   <section class='tw-inline-block tw-mt-12 '>
                   <h2 class=''>${book?.name}</h2>
-                  <p class='tw-my-16 tw-text-2xl'> <span>★★★★★</span> <span>Xem ${
-                    book.comment
-                  } Đánh giá</span> |  Đã bán ${
+                  <p class='tw-my-16 tw-text-2xl'> <span>★★★★★</span> <span>${
+                    book.commet
+                      ? `Có ${book.commet} đánh giá`
+                      : "Không có đánh giá nào"
+                  } </span> |  Đã bán ${
     book?.quantity_sold ? book?.quantity_sold?.text : "0"
   }  </p> 
       <p class='tw-font-bold tw-mt-10 tw-text-3xl tw-text-red-500'>${
@@ -91,7 +93,9 @@ const ProductDetail = ({ id }) => {
                   <section class='container tw-mt-32 '>
                   
                     <h1>Mô tả sản phẩm</h1>
-                  ${book.description}</section>
+                  ${
+                    book.description ? book.description : "Không có mô tả"
+                  }</section>
                 
                   ${Footer()}
               </div>

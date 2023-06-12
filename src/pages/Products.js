@@ -70,7 +70,9 @@ const Products = () => {
          return `
       <div>
       <a class='tw-text-[#242424] tw-no-underline' href='#/product/${book.id}'>
-       <img class='' src=${book.images ? book.images[0] : book.images} atl='' />
+       <img class='' src=${
+         book.images ? book.images[0] : "/public/imgs/imgNotfound.jpg"
+       } atl='' />
         <p  class='e tw-ml-8 tw-mt-5 tw-w-[210px] tw-max-h-15 '>${book.name}</p>
       </a>
         <span class='tw-flex tw-ml-6 tw-gap-4'> 

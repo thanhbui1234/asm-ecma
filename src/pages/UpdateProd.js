@@ -29,7 +29,6 @@ const UpdateProduct = ({ id }) => {
     const name = document.querySelector('input[name="name"]');
     const price = document.querySelector('input[name="price"]');
     const description = document.querySelector("#description");
-    const short_description = document.querySelector("#short_description");
     my_form.addEventListener("submit", (e) => {
       e.preventDefault();
       const valueForm = {
@@ -37,7 +36,6 @@ const UpdateProduct = ({ id }) => {
         name: name.value,
         list_price: price.value,
         description: description.value,
-        short_description: short_description.value,
         original_price: price.value,
       };
 
@@ -76,12 +74,7 @@ const UpdateProduct = ({ id }) => {
     books.description
   }</textarea>
 </div>
-<div class="mb-3">
-  <label for="" class="tw-text-lg form-label">Short Description</label>
-  <textarea  class="form-control" id="short_description" rows="3">${
-    books.short_description
-  }</textarea>
-</div>
+
 <button class='addProduct btn btn-danger'>ADD</button>
   </div>
 
